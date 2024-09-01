@@ -3,15 +3,15 @@
 class Calculator {
 
     constructor(previousEntry, currentEntry) {
-        this.previousEntry;
-        this.currentEntry;
+        this.previousEntryElement = previousEntry;
+        this.currentEntryElement = currentEntry;
         this.allClear()
     }
 
     chooseOperation(operation) {
-        if (this.currentEntry == '') return
-        if (this.previousEntry != '') {
-            this.calculate
+        if (this.currentEntry === '' || this.currentEntryElement.innerHTML.length > 6) return
+        if (this.previousEntry !== '') {
+            this.calculate()
         }
         this.operation = operation
         this.previousEntry = this.currentEntry
@@ -21,27 +21,96 @@ class Calculator {
     allClear() {
         this.currentEntry = ''
         this.previousEntry = ''
+        this.operation = undefined;
     }
 
     del() {
         this.currentEntry = this.currentEntry.toString().slice(0, -1);
+        this.previousEntry = ''
     }
 
     calculate() {
+        
+        let computation;
+        const prev = parseFloat(this.previousEntry);
+        const current = parseFloat(this.currentEntry)
+        if (isNaN(prev) || isNaN(current)) return;
+        switch (this.operation) {
+            case '+':
+                computation = prev + current;
+                break;
 
+            case '-':
+                computation = prev - current;
+                break;
+
+            case '/':
+                computation = prev / current
+                break;
+
+            case '*':
+                computation = prev * current
+                break;
+
+            case '%':
+                computation = prev % current
+                break
+
+            default:
+                return;
+
+        }
+
+        if(computation.toString().length > 12){
+            computation = computation.toString().slice(0, 10)
+            debugger
+        }
+        this.previousEntry = `${this.previousEntry} ${this.operation} ${this.currentEntry}`
+        this.currentEntry = computation;
+        this.operation = undefined;
+        
+    }
+
+    getDisplayNumber(number) {
+        const stringNumber = number.toString();
+        const integerDigits = parseFloat(stringNumber.split('.'), [0])
+        const decimalDigits = stringNumber.split('.')[1]
+        let integerDisplay
+        if (isNaN(integerDigits)) {
+            integerDisplay = ''
+        } else {
+            integerDisplay = integerDigits.toLocaleString('en-IN', { maximumFractionDigits: 0 })
+        }
+        if (decimalDigits != null) {
+            return `${integerDisplay}.${decimalDigits}`
+        } else {
+            return integerDisplay
+        }
+    }
+
+    updateDisplay() {
+        this.currentEntryElement.innerHTML = this.getDisplayNumber(this.currentEntry)
+        if (this.operation != null) {
+            this.previousEntryElement.innerHTML =
+                `${this.getDisplayNumber(this.previousEntry)} ${this.operation}`
+        } else {
+            this.previousEntryElement.innerHTML = this.previousEntry
+        }
     }
 
     appendValue(number) {
+
         if (number === '.' && this.currentEntry.includes('.'))
             return;
 
+        if(this.currentEntry.length >=5 || this.currentEntryElement.innerHTML.length >= 6)
+            return;
+
+        if(number === '.' && this.currentEntry.length == 0){
+            this.currentEntry = this.curr
+        }
         this.currentEntry = this.currentEntry.toString() + number.toString();
     }
-
-    displayValue() {
-        this.currentEntry.innerHTML = "5"
-    }
-
 }
 
 
@@ -55,40 +124,40 @@ const allClearButton = document.querySelector('.data-all-clear')
 var previousEntryElement = document.querySelector('.data-previous-entry')
 var currentEntryElement = document.querySelector('.data-typed-entry')
 
-const calculator = new Calculator;
+const calculator = new Calculator(previousEntryElement, currentEntryElement);
 
 for (var i = 0; i < numberButtons.length; i++) {
-    let number = numberButtons[i].innerHTML;
-    // debugger
-    numberButtons[i].addEventListener("click", (e) => {
-        
-        //appendNumber
-        if (numberButtons[i].innerHTML === '.' && currentEntryElement.contains('.'))
-            return;
-        if(currentEntryElement.innerHTML.length >= 8)
-            return;
-        currentEntryElement.innerHTML = currentEntryElement.innerHTML + number.toString()
+    let numberBtn = numberButtons[i]
+
+    numberBtn.addEventListener("click", (e) => {
+
+        calculator.appendValue(numberBtn.innerHTML)
+        calculator.updateDisplay();
     })
 }
 
 for (var i = 0; i < operationButtons.length; i++) {
     let button = operationButtons[i];
 
-    operationButtons[i].addEventListener('click', (e) => {
-        currentEntryElement.innerHTML = currentEntryElement.innerHTML + button.innerHTML;
+    button.addEventListener('click', (e) => {
+        calculator.chooseOperation(button.innerHTML)
+        calculator.updateDisplay()
     })
 }
 
 calculateButton.addEventListener('click', (e) => {
-
+    calculator.calculate()
+    calculator.updateDisplay()
 })
 
 delButton.addEventListener('click', (e) => {
-    currentEntryElement.innerHTML = currentEntryElement.innerHTML.slice(0, -1);
+
+    calculator.del()
+    calculator.updateDisplay()
 })
 
 allClearButton.addEventListener('click', (e) => {
-    debugger
+
     calculator.allClear()
-    calculator.displayValue()
+    calculator.updateDisplay()
 })
