@@ -7,12 +7,11 @@ body{
 }
 
 .horz_line{
-
-    width: 90%;
+    width: 95%;
     height: 0.5px;
-    margin-left: 5%;
+    margin-left: 2.5%;
     border-radius: 2px;
-    background-color: #808080;
+    background-color: rgba(105, 103, 103, 0.372);
 }
 
 .vertical_space{
@@ -21,8 +20,14 @@ body{
     /* background-color: darkseagreen; */
 }
 
+.vertical_space_half{
+    width: 100%;
+    height: 20px;
+    /* background-color: darkseagreen; */
+}
+
 .header{
-    height: 80px;
+    height: 60px;
     padding-left: 50px;
     padding-right: 50px;
     user-select: none;
@@ -30,7 +35,7 @@ body{
     align-items: center;
     display: flex;
     flex-direction: row;
-    /* background-color: darkgoldenrod; */
+    background-color: rgba(235, 235, 235, 0.372);
 }
 
 .header_title{
@@ -45,92 +50,110 @@ body{
     transform: rotate(-30deg);
 }
 
+#calculator_icon_svg path:nth-child(1){
+    stroke-dasharray: 69.70px;
+    stroke-dashoffset: 69.70px;
+    animation: line-anim 0.500s forwards ease;
+}
+
+#calculator_icon_svg path:nth-child(2){
+    stroke-dasharray: 29.68px;
+    stroke-dashoffset: 29.68px;
+    animation: line-anim 0.500s forwards ease 0.250s;
+}
+
 #logo{
     
-    animation: fill 0.250s ease forwards 0.450s;
     margin-left: 10px;
+    /* animation: fill 0.250s ease forwards 0.450s; */
     /* background-color: aquamarine; */
 }
     
 
 #logo path:nth-child(1){
-    stroke-dasharray: 96.08px;
-    stroke-dashoffset: 96.08px;
-    animation: line-anim 0.250s ease forwards;
-    
-
+    stroke-dasharray: 47.74px;
+    stroke-dashoffset: 47.74px;
+    animation: line-anim 0.250s ease forwards 0.250s;
 }
 
 #logo path:nth-child(2){
-    stroke-dasharray: 88.88px;
-    stroke-dashoffset: 88.88px;
-    animation: line-anim 0.250s ease forwards 0.050s;
-    
-}
-
-#logo path:nth-child(3){
-    stroke-dasharray: 47.21px;
-    stroke-dashoffset: 47.21px;
+    stroke-dasharray: 52.27px;
+    stroke-dashoffset: 52.27px;
     animation: line-anim 0.250s ease forwards 0.1s;
     
 }
 
-#logo path:nth-child(4){
-    stroke-dasharray: 76.13px;
-    stroke-dashoffset: 76.13px;
+#logo path:nth-child(3){
+    stroke-dasharray: 21.05px;
+    stroke-dashoffset: 21.05px;
     animation: line-anim 0.250s ease forwards 0.150s;
     
 }
 
-#logo path:nth-child(5){
-    stroke-dasharray: 79.13px;
-    stroke-dashoffset: 79.13px;
+#logo path:nth-child(4){
+    stroke-dasharray: 38.68px;
+    stroke-dashoffset: 38.68px;
     animation: line-anim 0.250s ease forwards 0.200s;
+    
 }
 
-#logo path:nth-child(6){
-    stroke-dasharray: 47.21px;
-    stroke-dashoffset: 47.21px;
+#logo path:nth-child(5){
+    stroke-dasharray: 47.23px;
+    stroke-dashoffset: 47.23px;
     animation: line-anim 0.250s ease forwards 0.250s;
 }
 
-#logo path:nth-child(7){
-    stroke-dasharray: 88.88px;
-    stroke-dashoffset: 88.88px;
+#logo path:nth-child(6){
+    stroke-dasharray: 21.47px;
+    stroke-dashoffset: 21.47px;
     animation: line-anim 0.250s ease forwards 0.300s;
 }
 
-#logo path:nth-child(8){
-    stroke-dasharray: 60.86px;
-    stroke-dashoffset: 60.86px;
+#logo path:nth-child(7){
+    stroke-dasharray: 58.43px;
+    stroke-dashoffset: 58.43px;
     animation: line-anim 0.250s ease forwards 0.350s;
 }
 
-#logo path:nth-child(9){
-    stroke-dasharray: 78.31px;
-    stroke-dashoffset: 78.31px;
+#logo path:nth-child(8){
+    stroke-dasharray: 49.37px;
+    stroke-dashoffset: 49.37px;
     animation: line-anim 0.250s ease forwards 0.400s;
+}
+
+#logo path:nth-child(9){
+    stroke-dasharray: 9.38px;
+    stroke-dashoffset: 9.38px;
+    animation: line-anim 0.250s ease forwards 0.450s;
     
 }
 
 #logo path:nth-child(10){
-    stroke-dasharray: 47.01px;
-    stroke-dashoffset: 47.01px;
-    animation: line-anim 0.250s ease forwards 0.450s;
+    stroke-dasharray: 43.21px;
+    stroke-dashoffset: 43.21px;
+    animation: line-anim 0.250s ease forwards 0.5s;
+}
+
+#logo path:nth-child(11){
+    stroke-dasharray: 45.18px;
+    stroke-dashoffset: 45.18px;
+    animation: line-anim 0.250s ease forwards 0.550s;
 }
 
 .nav_lang_button{
 
     padding-left: 25px;
     padding-right: 25px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     color: white;
-    font-weight: bold;
+    font-weight: normal;
     background-color: royalblue;
-    border-radius: 20px;
+    border-radius: 5px;
     cursor: pointer;
     background-color: #3A4655;
 }
@@ -140,38 +163,51 @@ body{
 }
 
 #lang_text{
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 15px;
+    font-weight: normal;
+    margin-left: 5px;
+    /* background-color: chocolate; */
 }
 
 .sections{
-    height: 80px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: #3A4655; */
+    background-color:rgba(214, 213, 213, 0.372);
 }
 
 .sub_section{
-    width: 80px;
+    width: 100px;
     height: 100%;
-    margin-left: 2.5px;
-    margin-right: 2.5px;
+    margin-left: 8px;
+    margin-right: 8px;
+    border: 2px solid #a5a2a235;
     border-radius: 15px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    background-color: rgb(174, 173, 173);
+    
+    /* background-color: rgb(174, 173, 173); */
 }
 
 #video_icon{
-    background-color: brown;
+    margin-top: 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    /* background-color: brown; */
 }
 
 #sub_section_text{
-    font-size: 16px;
-    background-color: aquamarine;
+    display: flex;
+    margin-top: 8px;
+    justify-content: center;
+    /* background-color: aquamarine; */
+}
+
+.space1{
+    background-color:rgba(214, 213, 213, 0.372);
 }
 
 .container{
@@ -420,16 +456,26 @@ video{
     background-color: white;
 }
 
+.comment_container{
+    width: 100%;
+    background-color: aqua;
+}
+
+.footer_space{
+    background-color: rgba(235, 235, 235, 0.372);
+}
+
 .footer{
     width: 100%;
-    min-height: 150px;
+    
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: #808080; */
+    background-color: rgba(235, 235, 235, 0.372);
 }
 
 .footer_text{
+    margin-top: 20px;
     font-size: small;
     color: #808080;   
 }

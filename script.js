@@ -1,5 +1,3 @@
-
-
 class Calculator {
 
     constructor(previousEntry, currentEntry) {
@@ -113,7 +111,6 @@ class Calculator {
     }
 }
 
-
 // https://www.youtube.com/watch?v=j59qQ7YWLxw
 
 const numberButtons = document.querySelectorAll('.data-number')
@@ -123,6 +120,32 @@ const delButton = document.querySelector('.data-del')
 const allClearButton = document.querySelector('.data-all-clear')
 var previousEntryElement = document.querySelector('.data-previous-entry')
 var currentEntryElement = document.querySelector('.data-typed-entry')
+
+// checking stroke length
+const line = document.querySelectorAll("#logo path")
+for(var i = 0; i < line.length; i++){
+    console.log(`Letter ${i} is ${line[i].getTotalLength()} `)
+}
+
+const button1 = document.querySelector(".sub_calculator");
+button1.addEventListener("click", (e)=>{
+    smoothScroll(".space1")
+})
+
+const button2 = document.querySelector(".sub_features");
+button2.addEventListener("click", (e)=>{
+    smoothScroll(".space2")
+})
+
+const button3 = document.querySelector(".sub_video");
+button3.addEventListener("click", (e)=>{
+    smoothScroll(".space3")
+})
+
+function smoothScroll(divName){
+    const hero = document.querySelector(divName);
+    hero.scrollIntoView({behavior:'smooth'})
+}
 
 const calculator = new Calculator(previousEntryElement, currentEntryElement);
 
