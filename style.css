@@ -413,35 +413,52 @@ video{
 }
 
 .player_controls{
-    height: 30px;
+    height: 35px;
     width: 429px;
     position: absolute;
     /* position: relative; */
     left: 10px;
-    bottom: 10px;
+    bottom: 15px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: rgb(3, 0, 0);
+    /* background-color: rgb(3, 0, 0); */
 }
 
-.play_pause{
+.player_loading{
     width: 30px;
     height: 30px;
     border-radius: 50%;
+    /* margin-left: -5px; */
+    margin-right: -5px;
+    
+    /* background-color: green; */
+    visibility: hidden;
+}
+
+.play_pause{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
     margin-left: 5px;
     margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: white;
 
     cursor: pointer;
 }
 
 .mute{
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     margin-left: 5px;
     margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: white;
 
     cursor: pointer;
@@ -449,15 +466,15 @@ video{
 
 .progress_filled{
     height: 4px;
-    width: 384px;
+    width: 300px;
     margin-left: 10px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     border-radius: 2.5px;
     background-color: #80808060;
 
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 
 .progress_bar{
@@ -468,14 +485,86 @@ video{
 }
 
 .comment_container{
-    padding-left: 50px;
-    padding-right: 50px;
-    background-color: aqua;
+    
+    /* height: 200px; */
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content: center;
+    /* background-color: aqua; */
 }
 
-.comment_heading{
-    font-size: 20px;
+.comment_text{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* background-color: chocolate; */
 }
+
+.comment_text_heading{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    /* background-color: #a5a2a2; */
+}
+
+    .comment_text_heading_icon{
+        width: 60px;
+        height: 60px;
+        margin-left: 20px;
+        /* background-color: aquamarine; */
+    }
+
+    .comment_text_heading_text{
+        font-family: sans-serif;
+        font-size: large;
+        font-weight: bold;
+        margin-left: 15px;
+    }
+
+.comment_text_text{
+    padding-top: 20px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    /* background-color: darkolivegreen; */
+}
+
+    .comment_form{
+        width: 50%;
+        height: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        
+    
+        /* background-color: darkmagenta; */
+    }
+
+        #feedback_name{
+            font-size: medium;
+        }
+
+        #feedback_feedback{
+            margin-top: 20px;
+            font-size: medium;
+        }
+
+        #submit_button{
+            width: 120px;
+            height: 50px;
+            border-radius: 8px;
+            font-size: medium;
+            margin-top: 20px;
+            cursor: pointer;
+        }
 
 .footer_space{
     background-color: rgba(235, 235, 235, 0.372);

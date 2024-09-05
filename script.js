@@ -147,9 +147,15 @@ button4.addEventListener("click", (e)=>{
     smoothScroll(".comment_space")
 })
 
+const video = document.querySelector('.video');
+
+video.addEventListener("click", (e)=>{
+    togglePlayPause(video);
+})
+
 const play = document.querySelector(".play_pause");
 play.addEventListener("click", (e)=>{
-    const video = document.querySelector('.video');
+    
     togglePlayPause(video);
 })
 
