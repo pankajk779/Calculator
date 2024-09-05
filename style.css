@@ -422,10 +422,21 @@ video{
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* background-color: rgb(3, 0, 0); */
+    background-color: rgb(3, 0, 0);
 }
 
 .play_pause{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: white;
+
+    cursor: pointer;
+}
+
+.mute{
     width: 30px;
     height: 30px;
     border-radius: 50%;

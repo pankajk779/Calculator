@@ -149,12 +149,27 @@ button4.addEventListener("click", (e)=>{
 
 const play = document.querySelector(".play_pause");
 play.addEventListener("click", (e)=>{
-    const video = document.querySelector('.video').play();
-    debugger
+    const video = document.querySelector('.video');
+    togglePlayPause(video);
 })
 
-function togglePlayPause(button){
-    
+function togglePlayPause(video){
+    const paused = video.paused;
+    debugger
+    if(paused){
+        video.play();
+    }else{
+        video.pause();
+    }
+}
+
+const muteButton = document.querySelector(".mute");
+muteButton.addEventListener("click", (e)=>{
+    toggleMute(document.querySelector(".video"))
+});
+
+function toggleMute(video){
+    video.muted = !video.muted
 }
 
 function smoothScroll(divName){
