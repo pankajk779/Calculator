@@ -142,6 +142,21 @@ button3.addEventListener("click", (e)=>{
     smoothScroll(".space3")
 })
 
+const button4 = document.querySelector(".nav_lang_button");
+button4.addEventListener("click", (e)=>{
+    smoothScroll(".comment_space")
+})
+
+const play = document.querySelector(".play_pause");
+play.addEventListener("click", (e)=>{
+    const video = document.querySelector('.video').play();
+    debugger
+})
+
+function togglePlayPause(button){
+    
+}
+
 function smoothScroll(divName){
     const hero = document.querySelector(divName);
     hero.scrollIntoView({behavior:'smooth'})

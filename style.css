@@ -457,8 +457,13 @@ video{
 }
 
 .comment_container{
-    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
     background-color: aqua;
+}
+
+.comment_heading{
+    font-size: 20px;
 }
 
 .footer_space{
