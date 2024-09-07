@@ -472,14 +472,14 @@ video{
     align-items: center;
     /* justify-content: center; */
     border-radius: 2.5px;
-    background-color: #80808060;
+    background-color: #80808080;
 
     /* visibility: hidden; */
 }
 
 .progress_bar{
     height: 4px;
-    width: 150px;
+    width: 0%;
     border-radius: 2.5px;
     background-color: white;
 }
