@@ -19,10 +19,10 @@
             href="style.css"
         >
         <script
+        type="module"
             src="script.js"
             defer
         ></script>
-
     </head>
 
 
@@ -617,22 +617,49 @@
             </div>
 
             <div class="comment_form">
-                <input
-                    type="text"
-                    name="name"
-                    id="feedback_name"
-                >
-                <textarea
-                    name="feedback"
-                    id="feedback_feedback"
-                    style="resize: none;"
-                    rows="10"
-                    cols="5"
-                ></textarea>
+                <div class="name_group">
+                    
+                    <input
+                        type="text"
+                        name="name"
+                        class = "feedback_name"
+                        placeholder=""
+                        required
+                    >
+                    <div class="lable_name">* First name</div>
+                </div>
+                
+                <div class="last_name_group">
+                    <input
+                        type="text"
+                        name="last_name"
+                        class = "feedback_last_name"
+                        placeholder=""
+                        required
+                    >
+                    <div class="lable_last_name">Last name</div>
+                </div>
+
+                <div class="feedback_group">
+                    <textarea
+                        name="feedback"
+                        class="feedback_feedback"
+                        style="resize: none;"
+                        rows="10"
+                        cols="5"
+                        placeholder=""
+                        required
+                    ></textarea>
+                    <div class="label_feedback">* Your feedback</div>
+                </div>
+                
+                <div class="comment_output">
+                    
+                </div>
 
                 <input
-                    type="button"
                     id="submit_button"
+                    type="button"
                     value="Submit"
                 >
             </div>
