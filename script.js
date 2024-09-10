@@ -300,17 +300,17 @@ function updateOutput(){
 feedback_first_name.addEventListener('keyup', (e)=>{
 
     if(feedback_first_name.value.length == 0){
-        feedback_first_name.style.border = "1.5px solid grey";
+        feedback_first_name.style.border = "1px solid grey";
         isFirstNameValid = false;
 
-    }else if(feedback_first_name.value.length > 0 && feedback_first_name.value.length <= 2){
+    }else if(feedback_first_name.value.length > 0 && feedback_first_name.value.length <= 3){
         
-        feedback_first_name.style.border = "1.5px solid red";
+        feedback_first_name.style.border = "1px solid red";
         isFirstNameValid = false;
         updateOutput();
 
-    }else if(feedback_first_name.value.length > 2){
-        feedback_first_name.style.border = "1.5px solid rgb(85, 239, 85)";
+    }else if(feedback_first_name.value.length > 3){
+        feedback_first_name.style.border = "1px solid rgb(85, 239, 85)";
         isFirstNameValid = true;
         updateOutput();
     }
@@ -318,11 +318,11 @@ feedback_first_name.addEventListener('keyup', (e)=>{
 
 feedback_last_name.addEventListener('keyup', (e)=>{
     if(feedback_last_name.value.length == 0){
-        feedback_last_name.style.border = "1.5px solid grey";
+        feedback_last_name.style.border = "1px solid grey";
         isLastNameValid = true;
 
     }else if(feedback_last_name.value.length >= 1){
-        feedback_last_name.style.border = "1.5px solid rgb(85, 239, 85)";
+        feedback_last_name.style.border = "1px solid rgb(85, 239, 85)";
         isLastNameValid = true;
         updateOutput();
     }
@@ -331,18 +331,18 @@ feedback_last_name.addEventListener('keyup', (e)=>{
 feedback_feedback.addEventListener('keyup', (e)=>{
 
     if(feedback_feedback.value.length == 0){
-        feedback_feedback.style.border = "1.5px solid grey";
+        feedback_feedback.style.border = "1px solid grey";
         isFeedbackValid = false;
         updateOutput();
 
-    }else if(feedback_feedback.value.length > 0 && feedback_feedback.value.length <= 2){
-        feedback_feedback.style.border = "1.5px solid red";
+    }else if(feedback_feedback.value.length > 0 && feedback_feedback.value.length <= 3){
+        feedback_feedback.style.border = "1px solid red";
         isFeedbackValid = false;
         updateOutput();
 
-    }else if(feedback_feedback.value.length > 2){
+    }else if(feedback_feedback.value.length > 3){
 
-        feedback_feedback.style.border = "1.5px solid rgb(85, 239, 85)";
+        feedback_feedback.style.border = "1px solid rgb(85, 239, 85)";
         isFeedbackValid = true;
         updateOutput();
     }
@@ -366,13 +366,13 @@ submit_btn.addEventListener('click', (e) =>{
         isFirstNameValid = false;
         isFeedbackValid = false;
 
-        feedback_first_name.style.border = "1.5px solid grey";
+        feedback_first_name.style.border = "1px solid grey";
         feedback_first_name.style.outline = "none";
 
-        feedback_last_name.style.border = "1.5px solid grey";
+        feedback_last_name.style.border = "1px solid grey";
         feedback_last_name.style.outline = "none";
 
-        feedback_feedback.style.border = "1.5px solid grey";
+        feedback_feedback.style.border = "1px solid grey";
         feedback_feedback.style.outline = "none";
 
     }else{
