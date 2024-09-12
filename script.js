@@ -380,3 +380,64 @@ submit_btn.addEventListener('click', (e) =>{
         output.innerHTML = " *First name and Feedback are required and should be more than 3 characters."
     }
 })
+
+//contact form
+const email = document.querySelector('.email');
+const github = document.querySelector('.github');
+const snackbar = document.querySelector('.footer_snackbar_wrapper');
+const snackbar_btn = document.querySelector('.snackbar_btn');
+const snackbar_timer = document.querySelector('.snackbar_timer_bar');
+var snackbar_closed = true;
+
+email.addEventListener('click', (e)=>{
+
+   navigator.clipboard.writeText("pankajk.alpine@gmail.com")
+   snackbar.style.opacity = "1";
+   snackbar_closed = false;
+   snackbar_btn.style.cursor = "pointer";
+//    activateTimer();
+});
+
+github.addEventListener('click', (e)=>{
+
+    window.open("https://www.github.com/pankajk779/calculator");
+});
+
+snackbar_btn.addEventListener('click',(e)=>{
+
+    if(snackbar_btn.style.cursor == "pointer"){
+
+        snackbar.style.opacity = "0";
+        snackbar_btn.style.cursor = "default";
+        snackbar_closed = true;
+    }
+});
+
+var timerCounter = 0;
+
+//timer for 3seconds
+function activateTimer(){
+    window.setTimeout(() => {
+
+        
+        if(timerCounter <= 300000 && !snackbar_closed){
+            timerCounter++;
+
+            var time_elapsed = timerCounter * 3.33;
+            var percentage = 100 - time_elapsed;
+            updateSnackbarTimer(percentage);
+
+        }else{
+            debugger
+            clearInterval(this);
+        }
+        
+    }, 1000);
+}
+
+function updateSnackbarTimer(percentage){
+    
+    snackbar_timer.style.width = `${percentage}%`;
+    var width = snackbar_timer.style.width;
+    debugger
+}

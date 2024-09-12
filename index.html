@@ -19,7 +19,7 @@
             href="style.css"
         >
         <script
-        type="module"
+            type="module"
             src="script.js"
             defer
         ></script>
@@ -314,7 +314,7 @@
 
             </div>
 
-            
+
         </div>
 
 
@@ -464,8 +464,10 @@
                             viewBox="0 0 100 100"
                             fill="none"
                         >
-                        <path d="M27.2918 91.2035C27.9542 91.5198 28.6883 91.6556 29.42 91.5971C30.1517 91.5385 30.8549 91.2878 31.4585 90.8701L59.0002 70.8285H75.0002C77.2103 70.8285 79.3299 69.9505 80.8927 68.3877C82.4555 66.8249 83.3335 64.7053 83.3335 62.4951V37.4951C83.3335 35.285 82.4555 33.1654 80.8927 31.6026C79.3299 30.0398 77.2103 29.1618 75.0002 29.1618H59.0002L31.6252 9.12013C31.0216 8.70249 30.3183 8.45171 29.5867 8.39318C28.855 8.33465 28.1208 8.47043 27.4585 8.7868C26.7402 9.10946 26.128 9.62906 25.6929 10.2854C25.2578 10.9417 25.0176 11.7079 25.0002 12.4951L25.0002 87.4951C25.0025 88.2646 25.2178 89.0183 25.6223 89.6729C26.0268 90.3274 26.6047 90.8572 27.2918 91.2035Z"
-                            fill="#1C274C"/>
+                            <path
+                                d="M27.2918 91.2035C27.9542 91.5198 28.6883 91.6556 29.42 91.5971C30.1517 91.5385 30.8549 91.2878 31.4585 90.8701L59.0002 70.8285H75.0002C77.2103 70.8285 79.3299 69.9505 80.8927 68.3877C82.4555 66.8249 83.3335 64.7053 83.3335 62.4951V37.4951C83.3335 35.285 82.4555 33.1654 80.8927 31.6026C79.3299 30.0398 77.2103 29.1618 75.0002 29.1618H59.0002L31.6252 9.12013C31.0216 8.70249 30.3183 8.45171 29.5867 8.39318C28.855 8.33465 28.1208 8.47043 27.4585 8.7868C26.7402 9.10946 26.128 9.62906 25.6929 10.2854C25.2578 10.9417 25.0176 11.7079 25.0002 12.4951L25.0002 87.4951C25.0025 88.2646 25.2178 89.0183 25.6223 89.6729C26.0268 90.3274 26.6047 90.8572 27.2918 91.2035Z"
+                                fill="#1C274C"
+                            />
                         </svg>
 
                     </div>
@@ -489,28 +491,31 @@
                 </div>
 
                 <div class="comment_text_text">
-                    I strive to bring best esperience with my products. I welcome your feedback on my work in this website.
+                    I strive to bring best esperience with my products. I welcome your feedback on my work in this
+                    website.
                 </div>
             </div>
 
             <div class="comment_form">
+
+                <div class="form_message">* indicates required fields.</div>
                 <div class="name_group">
-                    
+
                     <input
                         type="text"
-                        title = "First name"
-                        class = "feedback_name"
+                        title="First name"
+                        class="feedback_name"
                         placeholder=""
                         required
                     >
                     <div class="lable_name">* First name</div>
                 </div>
-                
+
                 <div class="last_name_group">
                     <input
                         type="text"
-                        title = "Last name"
-                        class = "feedback_last_name"
+                        title="Last name"
+                        class="feedback_last_name"
                         placeholder=""
                         required
                     >
@@ -519,7 +524,7 @@
 
                 <div class="feedback_group">
                     <textarea
-                        title = "Feedback"
+                        title="Feedback"
                         class="feedback_feedback"
                         style="resize: none;"
                         rows="10"
@@ -529,55 +534,166 @@
                     ></textarea>
                     <div class="label_feedback">* Your feedback</div>
                 </div>
-                
+
                 <div class="comment_output">
-                    
+
                 </div>
 
                 <div class="submit_group">
                     <input
-                        id ="submit_button"
+                        id="submit_button"
                         type="button"
                         value="Submit"
                     >
                 </div>
-                
+
             </div>
         </div>
 
         <div class="vertical_space comment_space"></div>
-        
+
 
         <div class="footer">
-            
+
+            <div class="footer_snackbar_wrapper">
+
+                <div class="snackbar_timer">
+
+                    <div class="snackbar_timer_bar">
+
+                    </div>
+                </div>
+
+                <div class="footer_snackbar">
+
+                    <div class="snackbar_text_cover">
+    
+                        <p class="snackbar_text"> Copied to clipboard.</p>
+                    </div>
+    
+                    <div class="snackbar_btn">
+    
+                        <svg
+                            class="close_icon"
+                            width="25"
+                            height="25"
+                            viewBox="0 0 100 100"
+                            fill="none">
+                            <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M91.6668 49.9999C91.6668 73.0116 73.0118 91.6666 50.0002 91.6666C26.9883 91.6666 8.3335 73.0116 8.3335 49.9999C8.3335 26.988 26.9883 8.33325 50.0002 8.33325C73.0118 8.33325 91.6668 26.988 91.6668 49.9999ZM37.3736 37.3735C38.594 36.1531 40.5726 36.1531 41.7931 37.3735L50.0002 45.5803L58.2068 37.3735C59.4272 36.1532 61.406 36.1532 62.6264 37.3735C63.8468 38.5939 63.8468 40.5726 62.6264 41.7928L54.4193 49.9999L62.6264 58.2066C63.8468 59.427 63.8468 61.4058 62.6264 62.6262C61.406 63.8466 59.4272 63.8466 58.2068 62.6262L50.0002 54.4195L41.7931 62.6262C40.5727 63.8466 38.5941 63.8466 37.3737 62.6262C36.1533 61.4058 36.1533 59.427 37.3737 58.207L45.5806 49.9999L37.3736 41.7928C36.1532 40.5725 36.1532 38.5938 37.3736 37.3735Z"
+                                fill="grey"
+                            />
+                            <!-- fill="#1C274C" -->
+                        </svg>
+    
+                    </div>
+                </div>
+            </div>
+
             <div class="footer_div">
-                
+
                 <div class="footer_text_wrapper">
 
                     <div class="footer_text">
                         All the design <br> & code <br> is done by me <br> without any use of AI. <br> Thanks.
                     </div>
                 </div>
-                
+
                 <div class="verticle_line">
                 </div>
 
                 <div class="contact">
 
+                    <div class="contact_wrapper">
+
                         <div class="email">
+
+                            <div class="copy_icon_holder">
+
+                                <div class="copy_icon_cover">
+
+                                    <svg
+                                        class="copy_icon"
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 100 100"
+                                        fill="none"
+                                    >
+
+                                        <path
+                                            d="M84.3425 14.2858H78.142C78.0128 14.2858 77.8979 14.3302 77.7778 14.3592V7.84812C77.7778 3.52031 74.1768 0 69.7498 0H15.9645C11.5375 0 7.93652 3.52031 7.93652 7.84812V81.0408C7.93652 85.3686 11.5375 88.8889 15.9645 88.8889H25.3968V92.4325C25.3968 96.6053 28.8598 100 33.1179 100H84.3425C88.6006 100 92.0635 96.6053 92.0635 92.4325V21.8533C92.0635 17.6805 88.6006 14.2858 84.3425 14.2858ZM11.1111 81.0408V7.84812C11.1111 5.27188 13.289 3.17469 15.9645 3.17469H69.7498C72.4253 3.17469 74.6032 5.27188 74.6032 7.84812V81.0408C74.6032 83.617 72.4253 85.7144 69.7498 85.7144H15.9645C13.289 85.7144 11.1111 83.617 11.1111 81.0408ZM88.8889 92.4325C88.8889 94.8553 86.849 96.8255 84.3425 96.8255H33.1179C30.6114 96.8255 28.5714 94.8553 28.5714 92.4325V88.8889H69.7498C74.1768 88.8889 77.7778 85.3686 77.7778 81.0408V17.3869C77.8979 17.4159 78.0128 17.4603 78.142 17.4603H84.3425C86.849 17.4603 88.8889 19.4305 88.8889 21.8533V92.4325Z"
+                                            fill="black"
+                                        />
+                                        <path
+                                            d="M60.3175 20.635H25.3969C24.5196 20.635 23.8096 21.3449 23.8096 22.2222C23.8096 23.0997 24.5196 23.8095 25.3969 23.8095H60.3175C61.1949 23.8095 61.9049 23.0997 61.9049 22.2222C61.9049 21.3449 61.1949 20.635 60.3175 20.635Z"
+                                            fill="black"
+                                        />
+                                        <path
+                                            d="M60.3175 33.3335H25.3969C24.5196 33.3335 23.8096 34.0433 23.8096 34.9207C23.8096 35.798 24.5196 36.508 25.3969 36.508H60.3175C61.1949 36.508 61.9049 35.798 61.9049 34.9207C61.9049 34.0433 61.1949 33.3335 60.3175 33.3335Z"
+                                            fill="black"
+                                        />
+                                        <path
+                                            d="M60.3175 46.0317H25.3969C24.5196 46.0317 23.8096 46.7417 23.8096 47.6191C23.8096 48.4964 24.5196 49.2064 25.3969 49.2064H60.3175C61.1949 49.2064 61.9049 48.4964 61.9049 47.6191C61.9049 46.7417 61.1949 46.0317 60.3175 46.0317Z"
+                                            fill="black"
+                                        />
+                                        <path
+                                            d="M44.4446 58.7302H25.3969C24.5196 58.7302 23.8096 59.4402 23.8096 60.3176C23.8096 61.1949 24.5196 61.9049 25.3969 61.9049H44.4446C45.3219 61.9049 46.0318 61.1949 46.0318 60.3176C46.0318 59.4402 45.3219 58.7302 44.4446 58.7302Z"
+                                            fill="black"
+                                        />
+                                    </svg>
+                                </div>
+
+                            </div>
+
                             <div class="email_text">
-                                pankajk.alpine@gmail.com
+
+                                <span class="email_text_1"> pankajk.alpine@gmail.com </span>
+                                <span class="email_text_2"> pankajk.alpine@gmail.com </span>
+                            </div>
+
+                            <div class="icon_space">
                             </div>
                         </div>
 
                         <div class="github">
 
+                            <div class="github_icon_holder">
+
+                                <div class="github_icon_cover">
+
+                                    <svg
+                                        class="github_icon"
+                                        width="20"
+                                        height="20"
+                                        viewBox="0 0 100 100"
+                                        fill="none"
+                                    >
+
+                                        <path
+                                            d="M20.8335 49.9999V24.9999C20.8335 22.6988 22.699 20.8333 25.0002 20.8333H75.0002C77.3014 20.8333 79.1668 22.6988 79.1668 24.9999V74.9999C79.1668 77.3012 77.3014 79.1666 75.0002 79.1666H50.0002M33.7965 49.9999H50.0002M50.0002 49.9999V66.2037M50.0002 49.9999L20.8335 79.1666"
+                                            stroke="black"
+                                            stroke-width="5"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </div>
+
+
+                            </div>
+
                             <div class="github_text">
-                                github.com/pankajk779
+                                <span class="github_text_1"> github.com/pankajk779 </span>
+                                <span class="github_text_2"> github.com/pankajk779 </span>
+                            </div>
+
+                            <div class="icon_space">
+
                             </div>
                         </div>
-                    
-                    
+                    </div>
                 </div>
 
             </div>
@@ -590,7 +706,7 @@
                         height="40"
                         viewBox="0 0 25 25"
                         fill="none"
-                        >
+                    >
                         <path
                             d="M22.9168 12.4999C22.9168 17.4103 22.9168 19.8656 21.3913 21.3911C19.8659 22.9166 17.4106 22.9166 12.5002 22.9166C7.58969 22.9166 5.13446 22.9166 3.60899 21.3911C2.0835 19.8656 2.0835 17.4103 2.0835 12.4999C2.0835 7.58945 2.0835 5.13422 3.60899 3.60874C5.13446 2.08325 7.58969 2.08325 12.5002 2.08325C17.4106 2.08325 19.8659 2.08325 21.3913 3.60874C22.4057 4.62305 22.7456 6.04841 22.8594 8.33325"
                             stroke="white"
@@ -620,7 +736,7 @@
                         />
                     </svg>
                 </div>
-                
+
             </div>
         </div>
 

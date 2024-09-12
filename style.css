@@ -548,18 +548,26 @@ body {
     .comment_form {
         width: 40%;
         height: 100%;
-        /* margin-top: 35px; */
+        padding-top: 30px;
+        padding-bottom: 30px;
+        border-radius: 15px;
         display: flex;
         flex-direction: column;
         align-items: center;
 
-        /* background-color: darkmagenta; */
+        /* background-color: grey; */
     }
+
+        .form_message{
+            font-size: 14px;
+            color: grey;
+            margin-bottom: 10px;
+        }
 
         .name_group {
             width: 80%;
             position: relative;
-            margin-top: 20px;
+            
            
         }
 
@@ -725,6 +733,7 @@ body {
     padding-left: 25px;
     padding-right: 25px;
     padding-bottom: 20px;
+    position:relative;
     display: flex;
     flex-direction: column;
     border-radius: 10px;
@@ -733,7 +742,75 @@ body {
     background-color: #161b21;
 }
 
+    .footer_snackbar_wrapper{
+        width: 35%;
+        position: absolute;
+        bottom: 20%;
+        opacity: 0.0;
+        display: flex;
+        flex-direction: column;
 
+        transition: opacity 100ms ease-in-out;
+    }
+
+        .snackbar_timer{
+            
+            margin-left: 5px;
+            margin-right: 5px;
+            height: 2px;
+            display: flex;
+            flex-direction: row-reverse;
+
+            /* background-color: grey; */
+        }
+
+            .snackbar_timer_bar{
+                width: 100%;
+                border-radius: 1px;
+                background-color: white;
+            }
+
+        .footer_snackbar{
+            height: 30px;
+            margin-top: 2px;
+            border-radius: 5px;
+            padding-left: 5px;
+            padding-right: 5px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(255, 255, 255, 0.901);
+        }
+
+            .snackbar_text_cover{
+
+            }
+
+                .snackbar_text{
+                    margin-left: 20px;
+                    user-select: none;
+                    -webkit-user-select: none;
+                }
+
+            .snackbar_btn{
+                width: 30px;
+                height: 30px;
+                margin-right: -5px;
+                
+                position: relative;
+                
+                /* svg path style changed in js */
+
+                /* background-color: red; */
+            }
+
+                .close_icon{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                }
 
     .footer_div{
         width: 100%;
@@ -768,41 +845,192 @@ body {
 
         .contact{
             width: 50%;
+            
             /* background-color: chartreuse; */
         }
 
-            
+            .contact_wrapper{
+                width: fit-content;
+                margin-left: 50px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                /* align-items: center; */
+                /* background-color: brown; */
+            }
 
                 .email{
-                    width: 60%;
+                    height: 30px;
                     font-size: 16px;
                     color: white;
                     float: left;
-                    padding-top: 8px;
-                    padding-bottom: 8px;
-                    margin-left: 50px;
+                    position: relative;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    padding-top: 4px;
+                    padding-bottom: 4px;
+                    cursor: pointer;
                     display: flex;
                     justify-content: center;
+                    align-items: center;
                     border: 1px solid white;
                     border-radius: 5px;
-                    
+
+                
                     /* background-color: white; */
                 }
 
+                .btn_bg{
+
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                    background-color: coral;
+                }
+
+                .icon_space{
+                    height: 30px;
+                    width: 30px;
+                    /* background-color: aqua; */
+                }
+
+                .email:hover, .github:hover{
+
+                    /* background-color: rgb(167, 247, 167); */
+                    /* transition: background-color 200ms ease; */
+                }
+
+                    .email:hover .copy_icon_cover,
+                    .github:hover .github_icon_cover{
+                        scale: 1.0;
+                        transition: scale 200ms cubic-bezier(0.16, 0.95, 0.3, 1);
+                    }
+
+                    .email:hover .copy_icon,
+                    .github:hover .github_icon{
+                        opacity: 1.0;
+                        transform: translate(0px,0px);
+
+                        transition: 
+                            transform 300ms ease-out,
+                            opacity 100ms ease 50ms;
+                    }
+
+                    .email:hover .email_text_1,
+                    .github:hover .github_text_1{
+
+                        transform: translate(0%, -100%);
+                        transition: transform 200ms ease-in-out;
+                    }
+
+                    .email:hover .email_text_2,
+                    .github:hover .github_text_2{
+
+                        transform: translate(0%, -100%);
+                        transition: transform 200ms ease-in-out;
+                    }
+
+                    .copy_icon_holder, .github_icon_holder{
+                        width: 30px;
+                        height: 30px;
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        /* background-color: aqua; */
+                    }
+
+                        .copy_icon_cover, .github_icon_cover{
+                            width: 30px;
+                            height: 30px;
+                            scale: 0.3;
+                            border-radius: 50%;
+                            display: flex;
+                            overflow: hidden;
+                            align-items: center;
+                            justify-content: center;
+
+                            transition: scale 200ms cubic-bezier(0.16, 0.95, 0.3, 1) 100ms;
+
+                            background-color: chocolate;
+                        }
+
+                        .copy_icon{
+                            opacity: 0.0;
+                            transform: translate(-15px, 15px);
+
+                            transition: 
+                            transform 300ms ease-out,
+                            opacity 100ms ease-out;
+                            /* background-color: #a5a2a2; */
+                        }
+
+                    .email_text, .github_text{
+                        height: 18px;
+                        margin-left: 5px;
+                        margin-right: 5px;
+                        overflow: hidden;
+                        display: flex;
+                        flex-direction: column;
+                        user-select: none;
+                        -webkit-user-select: none;
+                        
+
+                        /* background-color: aqua; */
+                    }
+
+                    .email_text_1, .github_text_1{
+                        
+                        transition: transform 200ms ease-in-out;
+
+                        /* background-color: brown; */
+                    }
+    
+                    .email_text_2, .github_text_2{
+                        
+                        color: chocolate;
+                        transition: transform 200ms ease-in-out;
+
+                        /* background-color: grey; */
+                    }
+
+
                 .github{
-                    width: 60%;
+                    
+                    font-size: 16px;
+                    height: 30px;
                     font-size: 16px;
                     color: white;
                     float: left;
-                    padding-top: 8px;
-                    padding-bottom: 8px;
-                    margin-left: 50px;
+                    position: relative;
                     margin-top: 5px;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    padding-top: 4px;
+                    padding-bottom: 4px;
+                    cursor: pointer;
                     display: flex;
                     justify-content: center;
+                    align-items: center;
                     border: 1px solid white;
                     border-radius: 5px;
+
+                
+                    /* background-color: white; */
                 }
+
+                    .github_icon{
+                        opacity: 0.0;
+                        transform: translate(-15px, 15px);
+
+                        transition: 
+                        transform 300ms ease-out,
+                        opacity 100ms ease-out;
+                        /* background-color: #a5a2a2; */
+                    }
 
 .logo_footer{
     height: 100%;
@@ -834,5 +1062,15 @@ body {
 
     to {
         fill: black;
+    }
+}
+
+@keyframes buttonAnim{
+    0%{
+        width: 20px;
+    }
+
+    100%{
+        width: 200px;
     }
 }
